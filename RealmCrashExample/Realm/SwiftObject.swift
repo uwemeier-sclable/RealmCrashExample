@@ -10,12 +10,12 @@ import UIKit
 import Realm
 import Realm.Dynamic
 
-class SwiftObject: RLMObject {
+@objcMembers class SwiftObject: RLMObject {
     
-    @objc dynamic var id: String!
-    @objc dynamic var type: String!
-    @objc dynamic open var version: Int64 = 0
-    @objc dynamic open var time: Date = Date()
+    dynamic var id: String!
+    dynamic var type: String!
+    dynamic open var version: Int64 = 0
+    dynamic open var time: Date = Date()
     
     override class func primaryKey() -> String? {
         return "id"
