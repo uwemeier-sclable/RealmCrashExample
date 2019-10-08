@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		1944CF88234C6FED00A195A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1944CF86234C6FED00A195A1 /* Main.storyboard */; };
 		1944CF8A234C6FEE00A195A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1944CF89234C6FEE00A195A1 /* Assets.xcassets */; };
 		1944CF8D234C6FEE00A195A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1944CF8B234C6FEE00A195A1 /* LaunchScreen.storyboard */; };
+		1944CF96234C70F500A195A1 /* SwiftObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944CF95234C70F500A195A1 /* SwiftObject.swift */; };
 		EDD224FAF8AD90D18D39CD92 /* Pods_RealmCrashExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799DDB0976619E1F03870B82 /* Pods_RealmCrashExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		1944CF89234C6FEE00A195A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1944CF8C234C6FEE00A195A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1944CF8E234C6FEE00A195A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1944CF95234C70F500A195A1 /* SwiftObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftObject.swift; sourceTree = "<group>"; };
 		653144250BE2902250E054B0 /* Pods-RealmCrashExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmCrashExample.debug.xcconfig"; path = "Target Support Files/Pods-RealmCrashExample/Pods-RealmCrashExample.debug.xcconfig"; sourceTree = "<group>"; };
 		77A1451F59BDBA0C87155EFD /* Pods-RealmCrashExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmCrashExample.release.xcconfig"; path = "Target Support Files/Pods-RealmCrashExample/Pods-RealmCrashExample.release.xcconfig"; sourceTree = "<group>"; };
 		799DDB0976619E1F03870B82 /* Pods_RealmCrashExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmCrashExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,12 +68,21 @@
 				1944CF80234C6FED00A195A1 /* AppDelegate.swift */,
 				1944CF82234C6FED00A195A1 /* SceneDelegate.swift */,
 				1944CF84234C6FED00A195A1 /* ViewController.swift */,
+				1944CF94234C706B00A195A1 /* Realm */,
 				1944CF86234C6FED00A195A1 /* Main.storyboard */,
 				1944CF89234C6FEE00A195A1 /* Assets.xcassets */,
 				1944CF8B234C6FEE00A195A1 /* LaunchScreen.storyboard */,
 				1944CF8E234C6FEE00A195A1 /* Info.plist */,
 			);
 			path = RealmCrashExample;
+			sourceTree = "<group>";
+		};
+		1944CF94234C706B00A195A1 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				1944CF95234C70F500A195A1 /* SwiftObject.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		71511DB0B77E5A0B79154EF9 /* Frameworks */ = {
@@ -88,7 +99,6 @@
 				653144250BE2902250E054B0 /* Pods-RealmCrashExample.debug.xcconfig */,
 				77A1451F59BDBA0C87155EFD /* Pods-RealmCrashExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -126,6 +136,7 @@
 				TargetAttributes = {
 					1944CF7C234C6FED00A195A1 = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -207,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1944CF96234C70F500A195A1 /* SwiftObject.swift in Sources */,
 				1944CF85234C6FED00A195A1 /* ViewController.swift in Sources */,
 				1944CF81234C6FED00A195A1 /* AppDelegate.swift in Sources */,
 				1944CF83234C6FED00A195A1 /* SceneDelegate.swift in Sources */,
@@ -354,15 +366,19 @@
 			baseConfigurationReference = 653144250BE2902250E054B0 /* Pods-RealmCrashExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R8292X7F72;
 				INFOPLIST_FILE = RealmCrashExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ums.RealmCrashExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -373,15 +389,18 @@
 			baseConfigurationReference = 77A1451F59BDBA0C87155EFD /* Pods-RealmCrashExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R8292X7F72;
 				INFOPLIST_FILE = RealmCrashExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ums.RealmCrashExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

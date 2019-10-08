@@ -7,14 +7,24 @@
 //
 
 import UIKit
+import Realm
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let config = RLMRealmConfiguration.default()
+        
+        if let newClass = SwiftObject.buildSubclass() {
+            config.objectClasses = [newClass]
+        }
+        
+        RLMRealmConfiguration.setDefault(config)
+        
+        let realm = RLMRealm.default()
+        
         return true
     }
 
